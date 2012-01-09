@@ -4,7 +4,7 @@
   <title><![CDATA[wipple's room]]></title>
   <link href="http://wipple.github.com/atom.xml" rel="self"/>
   <link href="http://wipple.github.com/"/>
-  <updated>2012-01-09T22:08:21+09:00</updated>
+  <updated>2012-01-09T22:12:28+09:00</updated>
   <id>http://wipple.github.com/</id>
   <author>
     <name><![CDATA[wipple]]></name>
@@ -16,13 +16,12 @@
   <entry>
     <title type="html"><![CDATA[旧記事と旧ファイルについて]]></title>
     <link href="http://wipple.github.com/blog/2012/01/09/2201/"/>
-    <updated>2012-01-09T22:07:00+09:00</updated>
+    <updated>2012-01-09T22:12:00+09:00</updated>
     <id>http://wipple.github.com/blog/2012/01/09/2201</id>
-    <content type="html"><![CDATA[<p><a href="http://wipple.m25.coreserver.jp/">CoreServer</a>にWordPressで書いた記事は
-昔の<a href="http://wippleroom.blogspot.com/">Blogger</a>に退避させました。
+    <content type="html"><![CDATA[<p><a href="http://wipple.m25.coreserver.jp/">CoreServer</a>にWordPressで書いた記事は昔の<a href="http://wippleroom.blogspot.com/">Blogger</a>に退避させました。
 バイナリファイルはすべてGitHubに持っていこうと思ったのですが、
-ファイルサイズを見てみたら100MBを超えていたので、それぞれ最新のだけ
-<a href="https://github.com/wipple/binaries/downloads">GitHub</a>に持っていきました。
+ファイルサイズを見てみたら100MBを超えていたので、
+それぞれ最新のだけ<a href="https://github.com/wipple/binaries/downloads">GitHub</a>に持っていきました。
 今後バイナリを配布する場合はここにアップロードしていくつもりです。</p>
 ]]></content>
   </entry>
