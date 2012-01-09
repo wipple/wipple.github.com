@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[wipple's room]]></title>
   <link href="http://wipple.github.com/atom.xml" rel="self"/>
   <link href="http://wipple.github.com/"/>
-  <updated>2012-01-09T12:10:51+09:00</updated>
+  <updated>2012-01-09T12:30:39+09:00</updated>
   <id>http://wipple.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[wipple]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[テスト記事]]></title>
+    <link href="http://wipple.github.com/blog/2012/01/09/tesutoji-shi/"/>
+    <updated>2012-01-09T12:27:00+09:00</updated>
+    <id>http://wipple.github.com/blog/2012/01/09/tesutoji-shi</id>
+    <content type="html"><![CDATA[<p>テスト</p>
+]]></content>
+  </entry>
   
 </feed>
