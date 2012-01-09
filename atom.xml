@@ -4,7 +4,7 @@
   <title><![CDATA[wipple's room]]></title>
   <link href="http://wipple.github.com/atom.xml" rel="self"/>
   <link href="http://wipple.github.com/"/>
-  <updated>2012-01-09T15:35:34+09:00</updated>
+  <updated>2012-01-09T15:51:20+09:00</updated>
   <id>http://wipple.github.com/</id>
   <author>
     <name><![CDATA[wipple]]></name>
@@ -28,15 +28,6 @@
     <updated>2012-01-09T14:30:00+09:00</updated>
     <id>http://wipple.github.com/blog/2012/01/09/1422</id>
     <content type="html"><![CDATA[<p>qfixhowmから記事を作成するテスト</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[テスト記事]]></title>
-    <link href="http://wipple.github.com/blog/2012/01/09/tesutoji-shi/"/>
-    <updated>2012-01-09T12:27:00+09:00</updated>
-    <id>http://wipple.github.com/blog/2012/01/09/tesutoji-shi</id>
-    <content type="html"><![CDATA[<p>テスト</p>
 ]]></content>
   </entry>
   
