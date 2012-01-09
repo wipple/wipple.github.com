@@ -4,7 +4,7 @@
   <title><![CDATA[wipple's room]]></title>
   <link href="http://wipple.github.com/atom.xml" rel="self"/>
   <link href="http://wipple.github.com/"/>
-  <updated>2012-01-09T15:51:20+09:00</updated>
+  <updated>2012-01-09T16:23:13+09:00</updated>
   <id>http://wipple.github.com/</id>
   <author>
     <name><![CDATA[wipple]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[テスト４]]></title>
+    <link href="http://wipple.github.com/blog/2012/01/09/1619/"/>
+    <updated>2012-01-09T16:20:00+09:00</updated>
+    <id>http://wipple.github.com/blog/2012/01/09/1619</id>
+    <content type="html"><![CDATA[<p>キーマップ設定の更新</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[テスト３]]></title>
