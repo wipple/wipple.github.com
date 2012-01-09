@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[wipple's room]]></title>
-  <link href="http://wipple.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: 雑談 | wipple's room]]></title>
+  <link href="http://wipple.github.com/blog/categories/雑談/atom.xml" rel="self"/>
   <link href="http://wipple.github.com/"/>
   <updated>2012-01-09T22:08:21+09:00</updated>
   <id>http://wipple.github.com/</id>
