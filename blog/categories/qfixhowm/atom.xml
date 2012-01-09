@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: qfixhowm | wipple's room]]></title>
+  <link href="http://wipple.github.com/blog/categories/qfixhowm/atom.xml" rel="self"/>
+  <link href="http://wipple.github.com/"/>
+  <updated>2012-01-09T15:35:34+09:00</updated>
+  <id>http://wipple.github.com/</id>
+  <author>
+    <name><![CDATA[wipple]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[テスト３]]></title>
+    <link href="http://wipple.github.com/blog/2012/01/09/1443/"/>
+    <updated>2012-01-09T15:35:00+09:00</updated>
+    <id>http://wipple.github.com/blog/2012/01/09/1443</id>
+    <content type="html"><![CDATA[<p>カテゴリのテスト</p>
+]]></content>
+  </entry>
+  
+</feed>
