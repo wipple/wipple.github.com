@@ -4,7 +4,7 @@
   <title><![CDATA[wipple's room]]></title>
   <link href="http://wipple.github.com/atom.xml" rel="self"/>
   <link href="http://wipple.github.com/"/>
-  <updated>2012-01-14T00:00:18+09:00</updated>
+  <updated>2012-01-14T00:06:36+09:00</updated>
   <id>http://wipple.github.com/</id>
   <author>
     <name><![CDATA[wipple]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[QFixHowmとOctopressを連携させてGitHubにブログを書く]]></title>
     <link href="http://wipple.github.com/blog/2012/01/14/2136/"/>
-    <updated>2012-01-14T00:00:00+09:00</updated>
+    <updated>2012-01-14T00:06:00+09:00</updated>
     <id>http://wipple.github.com/blog/2012/01/14/2136</id>
     <content type="html"><![CDATA[<p>二、三日試行錯誤してなんとかvimから離れずに、GitHubに作ったブログを簡単に更新できるようになったのでメモ。
 WordPressをvimから更新するプラグインもあったのですが、僕の環境ではうまく動きませんでした。
@@ -24,7 +24,7 @@ WordPressをvimから更新するプラグインもあったのですが、僕�
 
 <hr />
 
-<p>必要なもの</p>
+<h1>必要なもの</h1>
 
 <ul>
 <li><a href="http://github.com">GitHubのアカウント</a></li>
@@ -32,6 +32,8 @@ WordPressをvimから更新するプラグインもあったのですが、僕�
 <li><a href="http://sites.google.com/site/fudist/Home/qfixhowm">QFixHowm</a></li>
 </ul>
 
+
+<h1>Octopressを使ってみる</h1>
 
 <p>まず、以下の手順を踏んで、Octopressを使えるようにしておいて下さい。</p>
 
@@ -51,6 +53,8 @@ WordPressをvimから更新するプラグインもあったのですが、僕�
 
 
 <hr />
+
+<h1>QFixHowmとの連携</h1>
 
 <p>で、一度テスト記事を書いてみれば分かると思うのですが、Octopressは確かに便利なのは便利なのですが、
 実はrakeが意外と面倒だったりします（まあvimshell使えばいいんですけど）。
@@ -89,6 +93,8 @@ Octopressのpreview機能は非常に重かったので使っていません。<
 <p><em>ね？簡単でしょ？</em></p>
 
 <hr />
+
+<h1>おわり</h1>
 
 <p>ブログだけではなく、最近は大抵のことはvimで済ませるようにしています。
 GoogleReaderも2chもvimからチェックしていますし、
