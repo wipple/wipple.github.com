@@ -97,7 +97,7 @@ WordPressをvimから更新するプラグインもあったのですが、僕�
   
 
 
-<time datetime="2012-01-13T23:44:00+09:00" pubdate data-updated="true">Jan 13<span>th</span>, 2012</time>
+<time datetime="2012-01-13T23:50:00+09:00" pubdate data-updated="true">Jan 13<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -142,9 +142,70 @@ WordPressをvimから更新するプラグインもあったのですが、僕�
 
 <p>で、一度テスト記事を書いてみれば分かると思うのですが、Octopressは確かに便利なのは便利なのですが、
 実はrakeが意外と面倒だったりします（まあvimshell使えばいいんですけど）。
-で、QFixHowmをうまく連携させれば楽できるんじゃないのかと思いついて試行錯誤したQFixHowmの設定例がこれ↓</p>
+で、QFixHowmをうまく連携させれば楽できるんじゃないのかと思いついて試行錯誤したQFixHowmの設定例がこれ↓（なぜかGist埋め込みがうまくいかないので直貼り）</p>
 
-<p>{% gist 1606577 %}</p>
+<pre><code>" QFixHowm{{{
+NeoBundle 'fuenor/qfixhowm'
+" QFixHowm関連の設定を無効に
+let QFixHowm_Convert = 0
+" マップリーダー設定
+let qfixmemo_mapleader = ','
+" 外部grep使用
+let mygrepprg='grep'
+" ファイルフォーマット関係
+let qfixmemo_fileencoding = 'utf-8'
+let qfixmemo_fileformat = 'unix'
+" メモファイルの拡張子
+let qfixmemo_ext = 'mkd'
+" qfixmemoのファイルタイプ指定を無効
+let qfixmemo_filetype = ''
+" 自動整形
+let qfixmemo_use_keyword = 0
+let qfixmemo_use_addtitle = 0
+let qfixmemo_use_addtime = 0
+let qfixmemo_use_updatetime = 1
+let qfixmemo_use_deletenulllines = 0
+" メインの設定
+function! QFixHowmEnvMain()
+    let g:qfixmemo_dir = '~/qfixmemo'
+    let g:QFixMRU_RootDir = '~/qfixmemo'
+    let g:QFixMRU_Filename = '~/qfixmemo/mainmru'
+    let g:qfixmemo_timeformat = '[%Y-%m-%d %H:%M]'
+    let g:qfixmemo_filename = '%Y/%m/%Y-%m-%d-%H%M%S'
+    let g:qfixmemo_template = ['%TITLE% ', ""]
+    let g:qfixmemo_title = '#'
+    let g:qfixmemo_timeformat_regxp = '^\[\d\{4}-\d\{2}\d\{2} \d\{2}:\d\{2}\]'
+    let g:qfixmemo_timestamp_regxp = g:qfixmemo_timeformat_regxp
+    let g:qfixmemo_template_keycmd = "$a"
+    let g:QFixMRU_Title = {}
+    let g:QFixMRU_Title['mkd'] = '^#'
+    echo g:qfixmemo_dir
+endfunction
+" ブログ作成用(octopress)の設定
+function! QFixHowmEnvBlog()
+    let g:qfixmemo_dir = '~/src/octopress/source/_posts'
+    let g:QFixMRU_RootDir = '~/src/octopress/source/_posts'
+    let g:QFixMRU_Filename = '~/qfixmemo/blogmru'
+    let g:qfixmemo_timeformat = 'date: %Y-%m-%d %H:%M'
+    let g:qfixmemo_filename = '%Y-%m-%d-%H%M'
+    let g:qfixmemo_template =
+                \ ['---', 'layout: post', '%TITLE% ', '%DATE%',
+                \ 'comments: true', 'categories: ', '---', '']
+    let g:qfixmemo_title = 'title:'
+    let g:qfixmemo_timeformat_regxp = '^date: \d\{4}-\d\{2}-\d\{2} \d\{2}:\d\{2}'
+    let g:qfixmemo_timestamp_regxp = g:qfixmemo_timeformat_regxp
+    let g:qfixmemo_template_keycmd = "2j$a"
+    let g:QFixMRU_Title = {}
+    let g:QFixMRU_Title['mkd'] = '^title:'
+    echo g:qfixmemo_dir
+endfunction
+" キーマップ
+nnoremap qm :&lt;C-u&gt;call QFixHowmEnvMain()&lt;CR&gt;
+nnoremap qb :&lt;C-u&gt;call QFixHowmEnvBlog()&lt;CR&gt;
+" GitHubにポスト
+nnoremap bp :&lt;C-u&gt;!cd ~/src/octopress &amp;&amp; rake gen_deploy &amp;&amp; cd -&lt;CR&gt;
+"}}}
+</code></pre>
 
 <p>読めば分かる人はすぐに分かると思いますけど、一応簡単な使い方を説明しておきます。</p>
 
@@ -210,7 +271,7 @@ twitterもvimからやっていて、Lingrもvimから覗いています。
   
 
 
-<time datetime="2012-01-13T23:44:00+09:00" pubdate data-updated="true">Jan 13<span>th</span>, 2012</time>
+<time datetime="2012-01-13T23:50:00+09:00" pubdate data-updated="true">Jan 13<span>th</span>, 2012</time>
       
 
 <span class="categories">
