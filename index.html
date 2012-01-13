@@ -9,10 +9,9 @@
   <meta name="author" content="wipple">
 
   
-  <meta name="description" content="CoreServerにWordPressで書いた記事は昔のBloggerに退避させました。
-バイナリファイルはすべてGitHubに持っていこうと思ったのですが、
-ファイルサイズを見てみたら100MBを超えていたので、
-それぞれ最新のだけGitHubに持っていきました。 &hellip;">
+  <meta name="description" content="二、三日試行錯誤してなんとかvimから離れずに、GitHubに作ったブログを簡単に更新できるようになったのでメモ。
+WordPressをvimから更新するプラグインもあったのですが、僕の環境ではうまく動きませんでした。
+はてなダイアリー用のプラグインもあったのですが、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +78,125 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/13/2136/">QFixHowmとOctopressを連携させてGitHubにブログを書く</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-13T23:29:00+09:00" pubdate data-updated="true">Jan 13<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/13/2136/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>二、三日試行錯誤してなんとかvimから離れずに、GitHubに作ったブログを簡単に更新できるようになったのでメモ。
+WordPressをvimから更新するプラグインもあったのですが、僕の環境ではうまく動きませんでした。
+はてなダイアリー用のプラグインもあったのですが、はてな記法を覚えるのが面倒でやめました。</p>
+
+<hr />
+
+<p>必要なもの</p>
+
+<ul>
+<li><a href="http://github.com">GitHubのアカウント</a></li>
+<li><a href="http://octopress.org/">Octopress</a></li>
+<li><a href="http://sites.google.com/site/fudist/Home/qfixhowm">QFixHowm</a></li>
+</ul>
+
+
+<p>まず、以下の手順を踏んで、Octopressを使えるようにしておいて下さい。</p>
+
+<ol>
+<li>GitHubのアカウントを作成し、ブログ用に特別なレポジトリを作成する</li>
+<li>RubyをインストールしてからOctopressを使えるようにする</li>
+<li>ブログのタイトルなどを設定し、テスト記事を書いて投稿してみる</li>
+</ol>
+
+
+<p>以下のサイトを参考にすれば簡単に進めると思うのでここでは細かい手順は省略します。</p>
+
+<ul>
+<li><a href="http://blog.glidenote.com/blog/2011/11/07/install-octopress-on-github/">GithubとOctopressでモダンな技術系ブログを作ってみる</a></li>
+<li><a href="http://mattn.kaoriya.net/software/lang/ruby/20111017205717.htm">githubとjekyllとoctopressで作る簡単でモダンなブログ</a></li>
+</ul>
+
+
+<hr />
+
+<p>で、一度テスト記事を書いてみれば分かると思うのですが、Octopressは確かに便利なのは便利なのですが、
+実はrakeが意外と面倒だったりします（まあvimshell使えばいいんですけど）。
+で、QFixHowmをうまく連携させれば楽できるんじゃないのかと思いついて試行錯誤したQFixHowmの設定例がこれ↓</p>
+
+<p>{% gist 49e99fb294ea23be2da8 .vimrc %}</p>
+
+<p>読めば分かる人はすぐに分かると思いますけど、一応簡単な使い方を説明しておきます。</p>
+
+<p>,cと入力すればOctopressに合わせたファイルを新規に作成して開きます。
+開いた状態は以下のようになって、すでにタイトル部分にカーソルが動いています。</p>
+
+<p>{% image http://img828.imageshack.us/img828/4184/qfixhowm1.png %}</p>
+
+<p>タイトルを入力し必要ならカテゴリを入力し、ブログの内容をMarkdown形式で書いていきます。
+ちなみにファイルを保存する度にdate: の項目は保存時の日時に自動で書き換えられます。
+つまり、ファイル名は記事作成開始日時、ファイルのdate: 部分は最終更新日時になります。
+出来上がりの具合が心配なら、<a href="https://github.com/thinca/vim-quickrun">quickrun</a>を使えば簡単にHTMLへの変換を確認できます。
+Octopressのpreview機能は非常に重かったので使っていません。</p>
+
+<p>記事を書き終えて投稿するときは、ノーマルモードでbpを入力すればいいだけです。
+しばらくするとブログの方に反映されます。</p>
+
+<p>過去記事を参照したい場合は、,lを入力すればタイトル付きで記事の一覧が出てきます。</p>
+
+<p>{% image http://img339.imageshack.us/img339/2553/qfixhowm2.png %}</p>
+
+<p>真ん中のウィンドウに一覧が出ていて、カーソルのある位置のファイルのプレビューが一番下のウィンドウに出てきます。
+非常にわかりやすいですね。
+ローカルのファイル一覧を表示するだけで一々GitHubにアクセスもしないので高速ですね。
+昔の記事は表示せず、最近の記事のみ表示したいなら、,mです。
+エンター（リターン）キーを押すとファイルが開かれるので、記事の内容を修正したい場合は修正し、
+再度、ノーマルモードでbpと入力すをすれば記事の更新は完了です。
+他にもQFixHowmの様々な機能と連携させれば、いろんなことができると思います。</p>
+
+<p><em>ね？簡単でしょ？</em></p>
+
+<hr />
+
+<p>ブログだけではなく、最近は大抵のことはvimで済ませるようにしています。
+GoogleReaderも2chもvimからチェックしていますし、
+www.alc.co.jpにもvimからアクセスしていますし、
+Gistへのポストもvimからですし、GitHubへのpushもvimからですし、
+twitterもvimからやっていて、Lingrもvimから覗いています。
+おかげで、2GBしかメモリがない自分の環境でもメモリ使用量が節約できてvim様様です（笑）
+コーディングのしやすさは言わずもがなですが、優秀なプラグイン作者がたくさんいて素晴らしいです。</p>
+
+<p>純粋なvim記事ではなく、ウェブサービス系のプラグインのまとめ記事みたいなものも需要がありますかね。
+次回の記事はそれにしようかなあ…。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -190,6 +308,10 @@ L-SMASHのテスター活動で映像・音声のファイルのやり取りを�
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/01/13/2136/">QFixHowmとOctopressを連携させてGitHubにブログを書く</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/01/09/2201/">旧記事と旧ファイルについて</a>
