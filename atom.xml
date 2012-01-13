@@ -4,7 +4,7 @@
   <title><![CDATA[wipple's room]]></title>
   <link href="http://wipple.github.com/atom.xml" rel="self"/>
   <link href="http://wipple.github.com/"/>
-  <updated>2012-01-13T23:34:38+09:00</updated>
+  <updated>2012-01-13T23:36:41+09:00</updated>
   <id>http://wipple.github.com/</id>
   <author>
     <name><![CDATA[wipple]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[QFixHowmとOctopressを連携させてGitHubにブログを書く]]></title>
     <link href="http://wipple.github.com/blog/2012/01/13/2136/"/>
-    <updated>2012-01-13T23:34:00+09:00</updated>
+    <updated>2012-01-13T23:36:00+09:00</updated>
     <id>http://wipple.github.com/blog/2012/01/13/2136</id>
     <content type="html"><![CDATA[<p>二、三日試行錯誤してなんとかvimから離れずに、GitHubに作ったブログを簡単に更新できるようになったのでメモ。
 WordPressをvimから更新するプラグインもあったのですが、僕の環境ではうまく動きませんでした。
@@ -56,7 +56,7 @@ WordPressをvimから更新するプラグインもあったのですが、僕�
 実はrakeが意外と面倒だったりします（まあvimshell使えばいいんですけど）。
 で、QFixHowmをうまく連携させれば楽できるんじゃないのかと思いついて試行錯誤したQFixHowmの設定例がこれ↓</p>
 
-<p>{% gist 49e99fb294ea23be2da8 .vimrc %}</p>
+<p>{% gist 49e99fb294ea23be2da8 %}</p>
 
 <p>読めば分かる人はすぐに分かると思いますけど、一応簡単な使い方を説明しておきます。</p>
 
