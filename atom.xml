@@ -4,7 +4,7 @@
   <title><![CDATA[wipple's room]]></title>
   <link href="http://wipple.github.com/atom.xml" rel="self"/>
   <link href="http://wipple.github.com/"/>
-  <updated>2012-01-14T00:08:42+09:00</updated>
+  <updated>2012-01-14T18:14:14+09:00</updated>
   <id>http://wipple.github.com/</id>
   <author>
     <name><![CDATA[wipple]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[QFixHowmとOctopressを連携させてGitHubにブログを書く]]></title>
     <link href="http://wipple.github.com/blog/2012/01/14/2136/"/>
-    <updated>2012-01-14T00:08:00+09:00</updated>
+    <updated>2012-01-14T18:13:00+09:00</updated>
     <id>http://wipple.github.com/blog/2012/01/14/2136</id>
     <content type="html"><![CDATA[<p>二、三日試行錯誤してなんとかvimから離れずに、GitHubに作ったブログを簡単に更新できるようになったのでメモ。
 WordPressをvimから更新するプラグインもあったのですが、僕の環境ではうまく動きませんでした。
@@ -64,7 +64,10 @@ WordPressをvimから更新するプラグインもあったのですが、僕�
 
 <p>読めば分かる人はすぐに分かると思いますけど、一応簡単な使い方を説明しておきます。</p>
 
-<p>,cと入力すればOctopressに合わせたファイルを新規に作成して開きます。
+<p>QFixHowmを普通に使いたい時もあるので、Octopressと連携するときと簡単に切り替えるようにしてあります。
+qbと入力するとブログ用に、qmとすると通常の使い方にスイッチできます。</p>
+
+<p>ブログ用の使うとき、,cと入力すればOctopressに合わせたファイルを新規に作成して開きます。
 開いた状態は以下のようになって、すでにタイトル部分にカーソルが動いています。</p>
 
 <p><img src="http://img828.imageshack.us/img828/4184/qfixhowm1.png"></p>
