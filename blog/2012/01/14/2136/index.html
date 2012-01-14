@@ -97,7 +97,7 @@ WordPressをvimから更新するプラグインもあったのですが、僕�
   
 
 
-<time datetime="2012-01-14T18:13:00+09:00" pubdate data-updated="true">Jan 14<span>th</span>, 2012</time>
+<time datetime="2012-01-14T18:16:00+09:00" pubdate data-updated="true">Jan 14<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -148,14 +148,79 @@ WordPressをvimから更新するプラグインもあったのですが、僕�
 実はrakeが意外と面倒だったりします（まあvimshell使えばいいんですけど）。
 で、QFixHowmをうまく連携させれば楽できるんじゃないのかと思いついて試行錯誤したQFixHowmの設定例がこれ↓（なぜかGist埋め込みがうまくいかないのでリンク先に飛んで下さい）</p>
 
+<div><script src='https://gist.github.com/1606577.js?file='></script>
+<noscript><pre><code>&quot; QFixHowm{{{
+NeoBundle 'fuenor/qfixhowm'
+&quot; QFixHowm関連の設定を無効に
+let QFixHowm_Convert = 0
+&quot; マップリーダー設定
+let qfixmemo_mapleader = ','
+&quot; 外部grep使用
+let mygrepprg='grep'
+&quot; ファイルフォーマット関係
+let qfixmemo_fileencoding = 'utf-8'
+let qfixmemo_fileformat = 'unix'
+&quot; メモファイルの拡張子
+let qfixmemo_ext = 'mkd'
+&quot; qfixmemoのファイルタイプ指定を無効
+let qfixmemo_filetype = ''
+&quot; 自動整形
+let qfixmemo_use_keyword = 0
+let qfixmemo_use_addtitle = 0
+let qfixmemo_use_addtime = 0
+let qfixmemo_use_updatetime = 1
+let qfixmemo_use_deletenulllines = 0
+&quot; メインの設定
+function! QFixHowmEnvMain()
+    let g:qfixmemo_dir = '~/qfixmemo'
+    let g:QFixMRU_RootDir = '~/qfixmemo'
+    let g:QFixMRU_Filename = '~/qfixmemo/mainmru'
+    let g:qfixmemo_timeformat = '[%Y-%m-%d %H:%M]'
+    let g:qfixmemo_filename = '%Y/%m/%Y-%m-%d-%H%M%S'
+    let g:qfixmemo_template = ['%TITLE% ', &quot;&quot;]
+    let g:qfixmemo_title = '#'
+    let g:qfixmemo_timeformat_regxp = '^\[\d\{4}-\d\{2}\d\{2} \d\{2}:\d\{2}\]'
+    let g:qfixmemo_timestamp_regxp = g:qfixmemo_timeformat_regxp
+    let g:qfixmemo_template_keycmd = &quot;$a&quot;
+    let g:QFixMRU_Title = {}
+    let g:QFixMRU_Title['mkd'] = '^#'
+    echo g:qfixmemo_dir
+endfunction
+&quot; ブログ作成用(octopress)の設定
+function! QFixHowmEnvBlog()
+    let g:qfixmemo_dir = '~/src/octopress/source/_posts'
+    let g:QFixMRU_RootDir = '~/src/octopress/source/_posts'
+    let g:QFixMRU_Filename = '~/qfixmemo/blogmru'
+    let g:qfixmemo_timeformat = 'date: %Y-%m-%d %H:%M'
+    let g:qfixmemo_filename = '%Y-%m-%d-%H%M'
+    let g:qfixmemo_template =
+                \ ['---', 'layout: post', '%TITLE% ', '%DATE%',
+                \ 'comments: true', 'categories: ', '---', '']
+    let g:qfixmemo_title = 'title:'
+    let g:qfixmemo_timeformat_regxp = '^date: \d\{4}-\d\{2}-\d\{2} \d\{2}:\d\{2}'
+    let g:qfixmemo_timestamp_regxp = g:qfixmemo_timeformat_regxp
+    let g:qfixmemo_template_keycmd = &quot;2j$a&quot;
+    let g:QFixMRU_Title = {}
+    let g:QFixMRU_Title['mkd'] = '^title:'
+    echo g:qfixmemo_dir
+endfunction
+&quot; キーマップ
+nnoremap qm :&lt;C-u&gt;call QFixHowmEnvMain()&lt;CR&gt;
+nnoremap qb :&lt;C-u&gt;call QFixHowmEnvBlog()&lt;CR&gt;
+&quot; GitHubにポスト
+nnoremap bp :&lt;C-u&gt;!cd ~/src/octopress &amp;&amp; rake gen_deploy &amp;&amp; cd -&lt;CR&gt;
+&quot;}}}
+</code></pre></noscript></div>
+
+
 <p><a href="https://gist.github.com/1606577">.vimrc</a></p>
 
 <p>読めば分かる人はすぐに分かると思いますけど、一応簡単な使い方を説明しておきます。</p>
 
-<p>QFixHowmを普通に使いたい時もあるので、Octopressと連携するときと簡単に切り替えるようにしてあります。
+<p>QFixHowmを普通に使いたい時もあるので、Octopressと連携するときと簡単に切り替えられるようにしてあります。
 qbと入力するとブログ用に、qmとすると通常の使い方にスイッチできます。</p>
 
-<p>ブログ用の使うとき、,cと入力すればOctopressに合わせたファイルを新規に作成して開きます。
+<p>ブログ用に使うとき、,cと入力すればOctopressに合わせたファイルを新規に作成して開きます。
 開いた状態は以下のようになって、すでにタイトル部分にカーソルが動いています。</p>
 
 <p><img src="http://img828.imageshack.us/img828/4184/qfixhowm1.png"></p>
@@ -219,7 +284,7 @@ twitterもvimからやっていて、Lingrもvimから覗いています。
   
 
 
-<time datetime="2012-01-14T18:13:00+09:00" pubdate data-updated="true">Jan 14<span>th</span>, 2012</time>
+<time datetime="2012-01-14T18:16:00+09:00" pubdate data-updated="true">Jan 14<span>th</span>, 2012</time>
       
 
 <span class="categories">
